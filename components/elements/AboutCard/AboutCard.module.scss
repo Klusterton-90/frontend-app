@@ -1,0 +1,26 @@
+.aboutContainer {
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+  
+    h3 {
+      color: #1e1e1e;
+      font-weight: 600;
+    }
+  
+    p {
+      color: #808080;
+      font-weight: 400;
+    }
+  }
+  
+  .iconContainer {
+    border-radius: 8px;
+    background-color: #1b55ad;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    padding: 0 22px;
+  }
+  

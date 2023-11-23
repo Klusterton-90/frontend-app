@@ -1,0 +1,42 @@
+.landingBody {
+  padding: 95px 0;
+}
+.bodyTop {
+  padding: 0 95px;
+
+  p {
+    color: #787878;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  h3 {
+    color: #1e1e1e;
+    font-size: 24px;
+    font-weight: 600;
+  }
+}
+.reminderText {
+  color: #1b55ad;
+}
+
+.aboutRow {
+  display: flex;
+  margin: 80px 95px;
+}
+
+.bodyBottom {
+  padding: 95px;
+  background-color: #e8eef7;
+  display: flex;
+  gap: 47px;
+}
+
+.benefitsHeading {
+  margin-bottom: 80px;
+}
+.benefitsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
