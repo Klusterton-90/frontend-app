@@ -1,0 +1,54 @@
+.dashboardContainer {
+  display: flex;
+  width: 100%;
+}
+
+.dashboardLeft {
+  min-width: 70%;
+}
+
+.welcomeContainer {
+  display: flex;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #1b55ad 0%, #002359 100%);
+  padding: 20px;
+  width: 700px;
+  color: #fff;
+  position: relative;
+  margin: 20px 0;
+
+  h3 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 20px;
+    font-weight: 400;
+  }
+}
+
+.timeDateContainer {
+  display: flex;
+  border-radius: 10px;
+  background: #4977bd;
+  padding: 10px;
+  color: #ffffff;
+  gap: 36px;
+  margin-bottom: 50px;
+
+  div {
+    display: flex;
+  }
+}
+
+.welcomeImage {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.dashboardCardRow {
+  display: flex;
+  gap: 20px;
+}
