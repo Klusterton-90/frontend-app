@@ -6,8 +6,20 @@ import Image from "next/image";
 import LandingButton from "@/components/elements/LandingButton/LandingButton";
 import Footer from "@/components/elements/Footer/Footer";
 import LandingBody from "@/components/elements/LandingBody/LandingBody";
+import { useRouter } from "next/router";
+import { Routes } from "@/constants/navigation";
+
+
 
 export default function LandingPage() {
+  // router
+  const router = useRouter();
+
+  // handle button click
+  const handleClick = () =>{
+    router.push(Routes.Signup);
+  }
+
   return (
     <div className={styles.landingPageContainer}>
       <div className={styles.landingTop}>
@@ -29,7 +41,7 @@ export default function LandingPage() {
           </p>
           <p>measurements.</p>
           <div className={styles.margin} />
-          <LandingButton text={"Get Started"} />
+          <LandingButton text={"Get Started"} onClick={handleClick}/>
         </div>
       </div>
       <LandingBody/>

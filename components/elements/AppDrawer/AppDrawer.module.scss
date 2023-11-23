@@ -1,4 +1,8 @@
 .drawerContainer {
   width: 290px;
+  height: 100vh;
   background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

@@ -2,7 +2,13 @@ import React from "react";
 import styles from "./ListItem.module.scss";
 import Image from "next/image";
 
-export default function ListItem({ selected, onClick, icon, title }) {
+export default function ListItem({
+  selected,
+  onClick,
+  icon,
+  title,
+  iconSelected,
+}) {
   return (
     <div
       onClick={onClick}
@@ -12,7 +18,7 @@ export default function ListItem({ selected, onClick, icon, title }) {
         color: selected ? "#FFFFFF" : "#1E1E1E",
       }}
     >
-      <div>{icon}</div>
+      {selected ? <div>{iconSelected}</div> : <div>{icon}</div>}
       <p>{title}</p>
     </div>
   );
