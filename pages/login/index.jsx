@@ -3,11 +3,24 @@ import styles from "./login.module.scss";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { Routes } from "@/constants/navigation";
+import { useRouter } from "next/router";
 
 function LogInRight() {
-  
+  // router
+  const router = useRouter();
+
+  // info state
+  const [emailOrNumber, setEmailOrNumber] = useState("");
+  const [password, setPassword] = useState("");
+
+  // handle form submit
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    router.push(Routes.ProviderDashboard);
+  };
+
   return (
     <div className={styles.signUpContainer}>
       <div>
@@ -15,7 +28,7 @@ function LogInRight() {
         <p>Log in to your account to get started!</p>
       </div>
 
-      <form>
+      <form onSubmit={handleFormSubmit}>
         {/* input */}
 
         <div className={styles.inputContainer}>
@@ -39,7 +52,7 @@ function LogInRight() {
           Forgot Password?
         </Link>
         {/* submit button */}
-        <button className={styles.submitButton}>
+        <button className={styles.submitButton} type="submit">
           <p>Sign In</p>
         </button>
       </form>

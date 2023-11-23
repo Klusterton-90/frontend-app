@@ -1,12 +1,28 @@
 import AuthLayout from "@/components/layouts/AuthLayout/AuthLayout";
 import styles from "./Signup.module.scss";
 import Head from "next/head";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Routes } from "@/constants/navigation";
+import { useRouter } from "next/router";
 
 function SignupRight() {
+  // router
+  const router = useRouter();
+
+  // user info state
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+
+  // handle submit
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    router.push(Routes.ProviderDashboard);
+  };
+
   return (
     <div className={styles.signUpContainer}>
       <div>
@@ -14,25 +30,45 @@ function SignupRight() {
         <p>Register with us to get started!</p>
       </div>
 
-      <form>
+      <form onSubmit={handleFormSubmit}>
         {/* input */}
         <div className={styles.inputContainer}>
           <label>Full Name</label>
-          <input placeholder="Enter full name" type="text" />
+          <input
+            placeholder="Enter full name"
+            type="text"
+            value={fullName}
+            onChange={(event) => setFullName(event.target.value)}
+          />
         </div>
         <div className={styles.inputContainer}>
           <label>Email Address</label>
-          <input placeholder="Enter email address" type="email" />
+          <input
+            placeholder="Enter email address"
+            type="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
         </div>
         <div className={styles.inputContainer}>
           <label>Phone Number</label>
-          <input placeholder="Enter email address" type="text" />
+          <input
+            placeholder="Enter phone number"
+            type="text"
+            value={phoneNumber}
+            onChange={(event) => setPhoneNumber(event.target.value)}
+          />
         </div>
         {/* password */}
         <div className={styles.passwordContainer}>
           <label>Password</label>
           <div className={styles.passwordInput}>
-            <input placeholder="Enter password" type="password" />
+            <input
+              placeholder="Enter password"
+              type="password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+            />
             <Image
               src={"/images/eye.svg"}
               alt="visibility"
@@ -55,7 +91,7 @@ function SignupRight() {
           </div>
         </div>
         {/* submit button */}
-        <button className={styles.submitButton}>
+        <button className={styles.submitButton} type="submit">
           <p>Create an Account</p>
         </button>
       </form>
