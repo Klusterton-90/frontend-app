@@ -4,6 +4,7 @@ import Link from "next/link";
 import LandingButton from "../LandingButton/LandingButton";
 import { useRouter } from "next/router";
 import { Routes } from "@/constants/navigation";
+import Logo from "../Logo";
 
 const headerOptions = [
   {
@@ -34,7 +35,7 @@ export default function Header() {
   }
   return (
     <header className={styles.headerContainer}>
-      <div>logo</div>
+      <Logo/>
       <div className={styles.headerRight}>
         {headerOptions.map((option, index) => {
           return (

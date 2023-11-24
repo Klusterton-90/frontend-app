@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.scss";
+import Logo from "../Logo";
 
 const footerRightContent = [
   {
@@ -30,7 +31,7 @@ export default function Footer() {
     <footer className={styles.footerContainer}>
       <div className={styles.footerContent}>
         <div className={styles.contentLeft}>
-          <div className={styles.logo}>logo</div>
+          <Logo/>
           <p>
             While mirth large of on front. Ye he greater related adapted proceed
             <br />

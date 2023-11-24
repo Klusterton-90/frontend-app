@@ -4,6 +4,8 @@ import ListItem from "../ListItem/ListItem";
 import { useRouter } from "next/router";
 import { Routes } from "@/constants/navigation";
 import Image from "next/image";
+import Logo from "../Logo";
+import LogoBlack from "../Logo/LogoBlack";
 
 // healthcare provider menu items
 const providerMenuItems = [
@@ -14,22 +16,22 @@ const providerMenuItems = [
     iconHover: "/images/dashboard-selected.svg",
   },
   {
-    name: "Schedule",
-    url: Routes.ProviderSchedule,
-    icon: "/images/schedule.svg",
-    iconHover: "/images/schedule-selected.svg",
+    name: "Reminders",
+    url: Routes.ProviderReminders,
+    icon: "/images/calendar-black.svg",
+    iconHover: "/images/calendar.svg",
   },
   {
     name: "Patients",
     url: Routes.ProviderPatients,
     icon: "/images/patients.svg",
-    iconHover: "/images/icon-provider-dashboard-hover.svg",
+    iconHover: "/images/patients-selected.svg",
   },
   {
     name: "Messages",
     url: Routes.ProviderMessages,
     icon: "/images/messages.svg",
-    iconHover: "/images/icon-provider-dashboard-hover.svg",
+    iconHover: "/images/messages-selected.svg",
   },
   {
     name: "Reports",
@@ -91,25 +93,27 @@ export default function AppDrawer({ mode }) {
   return (
     <div className={styles.drawerContainer}>
       <div>
-        <div>logo</div>
-        {menuItems.map((item, index) => {
-          return (
-            <ListItem
-              selected={
-                mode == "provider"
-                  ? router.pathname === item?.url
-                  : router.pathname.includes(item?.url)
-              }
-              key={index}
-              icon={<Image src={item.icon} alt="" width={24} height={24} />}
-              iconSelected={
-                <Image src={item.iconHover} alt="" width={24} height={24} />
-              }
-              title={item.name}
-              onClick={(event) => handleListItemClick(event, index)}
-            />
-          );
-        })}
+        <LogoBlack />
+        <div className={styles.menuItemsContainer}>
+          {menuItems.map((item, index) => {
+            return (
+              <ListItem
+                selected={
+                  mode == "provider"
+                    ? router.pathname === item?.url
+                    : router.pathname.includes(item?.url)
+                }
+                key={index}
+                icon={<Image src={item.icon} alt="" width={24} height={24} />}
+                iconSelected={
+                  <Image src={item.iconHover} alt="" width={24} height={24} />
+                }
+                title={item.name}
+                onClick={(event) => handleListItemClick(event, index)}
+              />
+            );
+          })}
+        </div>
       </div>
       <div>
         {bottomMenuItems.map((item, index) => {

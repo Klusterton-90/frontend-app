@@ -3,7 +3,7 @@
   color: #d9d9d9;
   height: 100%;
 
-  hr{
+  hr {
     margin: 0 95px;
     background-color: #888;
     border: none;
@@ -14,12 +14,6 @@
 .footerContent {
   display: flex;
   padding: 46px 95px;
-}
-
-.logo {
-  width: 137px;
-  height: 57px;
-  background-color: #d9d9d9;
 }
 
 .contentLeft {
@@ -36,7 +30,7 @@
 
   p {
     color: #888;
-    padding:  4px;
+    padding: 4px;
   }
 
   h3 {
@@ -44,8 +38,8 @@
   }
 }
 
-.footerCopyright{
-    text-align: center;
-    padding: 39px;
-    font-size: 16px;
+.footerCopyright {
+  text-align: center;
+  padding: 39px;
+  font-size: 16px;
 }

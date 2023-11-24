@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./AuthLayout.module.scss";
 import Image from "next/image";
 import Container from "../Container/Container";
+import Logo from "@/components/elements/Logo";
 
 export default function AuthLayout({ rightContent, login }) {
   return (
@@ -17,7 +18,7 @@ export default function AuthLayout({ rightContent, login }) {
               objectFit="cover"
               className={styles.loginImage}
             />
-            <h3>MAWA LOGO</h3>
+            <Logo/>
           </div>
         </div>
       ) : (
@@ -30,7 +31,7 @@ export default function AuthLayout({ rightContent, login }) {
               objectFit="cover"
               className={styles.image}
             />
-            <h3>MAWA LOGO</h3>
+           <Logo/>
           </div>
           <div className={styles.rightContainer}>{rightContent}</div>
         </div>
