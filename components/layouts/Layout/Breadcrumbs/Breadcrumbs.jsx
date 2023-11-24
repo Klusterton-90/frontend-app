@@ -9,12 +9,6 @@ export default function Breadcrumbs() {
       <SearchBar />
       <div className={styles.breadcrumbsRight}>
         <Image
-          src={"/images/messages.svg"}
-          alt="messages"
-          width={36}
-          height={36}
-        />
-        <Image
           src={"/images/notification.svg"}
           alt="notifications"
           width={36}

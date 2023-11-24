@@ -4,7 +4,7 @@
 }
 
 .dashboardLeft {
-  min-width: 70%;
+  min-width: 60%;
 }
 
 .welcomeContainer {
@@ -40,6 +40,11 @@
   div {
     display: flex;
   }
+}
+
+.date {
+  display: flex;
+  gap: 11px;
 }
 
 .welcomeImage {

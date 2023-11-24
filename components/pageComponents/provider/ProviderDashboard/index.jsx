@@ -4,6 +4,8 @@ import styles from "./ProviderDashboard.module.scss";
 import Breadcrumbs from "@/components/layouts/Layout/Breadcrumbs/Breadcrumbs";
 import Image from "next/image";
 import DashboardCard from "@/components/elements/DashboardCard/DashboardCard";
+import { currentDate, currentTime } from "@/constants/date";
+import PatientsCard from "@/components/elements/PatientsCard/PatientsCard";
 
 export default function ProviderDashboard() {
   return (
@@ -14,16 +16,16 @@ export default function ProviderDashboard() {
           <div className={styles.welcomeContainer}>
             <div>
               <div className={styles.timeDateContainer}>
-                <div>
+                <div className={styles.date}>
                   <Image
                     src={"/images/calendar.svg"}
                     alt="date"
                     width={24}
                     height={24}
                   />
-                  <p>Nov 21, 2023</p>
+                  <p>{currentDate}</p>
                 </div>
-                <p>03:13 AM</p>
+                <p>{currentTime}</p>
               </div>
               <div className={styles.welcomeMessage}>
                 <h3>Welcome Dr. Michelle</h3>
@@ -52,10 +54,12 @@ export default function ProviderDashboard() {
               title={"Added Reminders"}
               number={105}
               description={"Total number of reminders"}
-              icon={"/images/calendar.svg"}
+              icon={"/images/calendar-black.svg"}
               alt={"Reminders"}
             />
           </div>
+
+          <PatientsCard dashboard={true}/>
         </div>
         <div className={styles.dashboardRight}></div>
       </div>
