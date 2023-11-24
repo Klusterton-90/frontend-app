@@ -1,5 +1,6 @@
 export const Routes = {
   Signup: "/signup",
+  Verify: "/signup/verification",
   Login: "/login",
   ProviderDashboard: "/dashboard",
   ProviderReminders: "/dashboard/reminders",

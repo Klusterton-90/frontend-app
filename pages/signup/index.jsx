@@ -20,7 +20,7 @@ function SignupRight() {
   // handle submit
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    router.push(Routes.ProviderDashboard);
+    router.push(Routes.Verify);
   };
 
   return (

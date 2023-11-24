@@ -12,7 +12,7 @@ export default function ProviderDashboard() {
     <Layout>
       <Breadcrumbs />
       <div className={styles.dashboardContainer}>
-        <div className={styles.dashboardLeft}>
+        <div className={styles.dashboardTop}>
           <div className={styles.welcomeContainer}>
             <div>
               <div className={styles.timeDateContainer}>
@@ -51,17 +51,17 @@ export default function ProviderDashboard() {
               alt={"Patients"}
             />
             <DashboardCard
-              title={"Added Reminders"}
-              number={105}
-              description={"Total number of reminders"}
+              title={"Av. Adherence"}
+              number={"105%"}
+              description={"Increase in the last month"}
               icon={"/images/calendar-black.svg"}
               alt={"Reminders"}
             />
           </div>
 
-          <PatientsCard dashboard={true} provider={true}/>
+          <PatientsCard dashboard={true} provider={true} />
         </div>
-        <div className={styles.dashboardRight}></div>
+        <div className={styles.dashboardBottom}></div>
       </div>
     </Layout>
   );

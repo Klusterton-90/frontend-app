@@ -1,13 +1,20 @@
 import React from "react";
 import styles from "./PatientsCard.module.scss";
 import Image from "next/image";
-import { patientInfoDashboard, patientInfoDashboardPatient } from "@/data/patientData";
-
+import {
+  patientInfoDashboard,
+  patientInfoDashboardPatient,
+  patientInfoPatients,
+  patientInfoProvider,
+  patientReportProvider,
+} from "@/data/patientData";
 
 // list of titles(provider)
 const titlesDashboard = ["Name", "Diagnosis", "Type", "Status"];
+
 // for patients screen(provider)
 const titlesPatients = [
+  "#",
   "Name",
   "Diagnosis",
   "Gender",
@@ -17,11 +24,23 @@ const titlesPatients = [
   "Status",
 ];
 
+// report titles
+const titlesReports = [
+  "#",
+  "Reminder",
+  "Diagnosis",
+  "Time",
+  "Date",
+  "Next Dose",
+  "Status",
+];
 
 // list of titles(patient)
 const titlesDashboardPatient = ["Medications", "Diagnosis", "Type", "Status"];
+
 // for patients screen(patient)
-const titlesPatientsPatient = [
+const titlesMedicationsPatient = [
+  "#",
   "Name",
   "Diagnosis",
   "Doses",
@@ -30,11 +49,7 @@ const titlesPatientsPatient = [
   "Status",
 ];
 
-
-
-const patientInfoPatients = [];
-
-export default function PatientsCard({ dashboard, provider }) {
+export default function PatientsCard({ dashboard, provider, report }) {
   return (
     <div className={styles.cardContainer}>
       <div className={styles.titlesRow}>
@@ -43,8 +58,12 @@ export default function PatientsCard({ dashboard, provider }) {
             ? titlesDashboard
             : titlesDashboardPatient
           : provider
-          ? titlesPatients
-          : titlesPatientsPatient
+          ? report
+            ? titlesReports
+            : titlesPatients
+          : report
+          ? titlesReports
+          : titlesMedicationsPatient
         ).map((title, index) => {
           return <p key={index}>{title}</p>;
         })}
@@ -62,25 +81,38 @@ export default function PatientsCard({ dashboard, provider }) {
           ? provider
             ? patientInfoDashboard
             : patientInfoDashboardPatient
+          : provider
+          ? report
+            ? patientReportProvider
+            : patientInfoProvider
+          : report
+          ? patientReportProvider
           : patientInfoPatients
         ).map((info, index) => {
           return (
             <div key={index} className={styles.patientRow}>
-              
-              <p>{info.name}</p>
-              <p>{info.diagnosis}</p>
-              <p>{info.type}</p>
+              {<span>{index + 1}</span>}
+              {info.one && <p>{info.one}</p>}
+              {info.two && <p>{info.two}</p>}
+              {info.three && <p>{info.three}</p>}
+              {info.four && <p>{info.four}</p>}
+              {info.five && <p>{info.five}</p>}
+              {info.six && <p>{info.six}</p>}
               <div
                 className={styles.statusPill}
                 style={{
                   backgroundColor:
-                    info.status === "Received" || info.status === "Completed"
+                    info.status === "Received" ||
+                    info.status === "Completed" ||
+                    info.status === "Taken"
                       ? "#E9F7EF"
                       : info.status === "Pending" || info.status === "Ongoing"
                       ? "#FFF6E5"
                       : "#FFE5E5",
                   color:
-                    info.status === "Received" || info.status === "Completed"
+                    info.status === "Received" ||
+                    info.status === "Completed" ||
+                    info.status === "Taken"
                       ? "#27AE60"
                       : info.status === "Pending" || info.status === "Ongoing"
                       ? "#FFA500"

@@ -6,6 +6,7 @@
     font-size: 24px;
     font-weight: 600;
   }
+
   p {
     color: #808080;
     font-size: 20px;
@@ -71,7 +72,7 @@
 }
 
 .submitButton {
-    margin: 40px 0;
+  margin: 40px 0;
   border-radius: 10px;
   background-color: #1b55ad;
   display: flex;
@@ -80,6 +81,7 @@
   padding: 15px 10px;
   width: 100%;
   border: none;
+  cursor: pointer;
 
   p {
     color: #ffffff;
@@ -88,14 +90,46 @@
   }
 }
 
-.haveAnAccount{
-    display: flex;
-    justify-content: center;
+.haveAnAccount {
+  display: flex;
+  justify-content: center;
 }
 
-.loginText{
-    color: #1B55AD;
-    text-decoration: underline;
+.loginText {
+  color: #1b55ad;
+  text-decoration: underline;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.verificationContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  h3 {
+    color: #1e1e1e;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  h4 {
+    color: #1e1e1e;
     font-size: 20px;
     font-weight: 400;
+  }
+  p {
+    color: #808080;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  button{
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+  }
 }
