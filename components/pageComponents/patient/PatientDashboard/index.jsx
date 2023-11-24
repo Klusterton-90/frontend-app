@@ -1,15 +1,15 @@
 import Layout from "@/components/layouts/Layout/Layout";
 import React from "react";
-import styles from "./ProviderDashboard.module.scss";
+import styles from "./PatientDashboard.module.scss";
 import Breadcrumbs from "@/components/layouts/Layout/Breadcrumbs/Breadcrumbs";
 import Image from "next/image";
 import DashboardCard from "@/components/elements/DashboardCard/DashboardCard";
 import { currentDate, currentTime } from "@/constants/date";
 import PatientsCard from "@/components/elements/PatientsCard/PatientsCard";
 
-export default function ProviderDashboard() {
+export default function PatientDashboard() {
   return (
-    <Layout>
+    <Layout mode="patient">
       <Breadcrumbs />
       <div className={styles.dashboardContainer}>
         <div className={styles.dashboardLeft}>
@@ -28,8 +28,8 @@ export default function ProviderDashboard() {
                 <p>{currentTime}</p>
               </div>
               <div className={styles.welcomeMessage}>
-                <h3>Welcome Dr. Michelle</h3>
-                <p>Have a nice working day!</p>
+                <h3>Welcome Mr Ademola</h3>
+                <p>How are you doing today!</p>
               </div>
             </div>
             <div>
@@ -44,22 +44,22 @@ export default function ProviderDashboard() {
           </div>
           <div className={styles.dashboardCardRow}>
             <DashboardCard
-              title={"Assigned Patients"}
-              number={46}
-              description={"Total patients assigned"}
-              icon={"/images/patients.svg"}
-              alt={"Patients"}
+              title={"Medications"}
+              number={12}
+              description={"Total medicines assigned "}
+              icon={"/images/pill.svg"}
+              alt={"medications"}
             />
             <DashboardCard
-              title={"Added Reminders"}
-              number={105}
+              title={"Reminders"}
+              number={48}
               description={"Total number of reminders"}
               icon={"/images/calendar-black.svg"}
               alt={"Reminders"}
             />
           </div>
 
-          <PatientsCard dashboard={true} provider={true}/>
+          <PatientsCard dashboard={true} provider={false}/>
         </div>
         <div className={styles.dashboardRight}></div>
       </div>

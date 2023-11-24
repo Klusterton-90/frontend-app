@@ -22,3 +22,29 @@
     font-weight: 400;
   }
 }
+
+.patientInfo {
+  overflow-y: scroll;
+  max-height: 400px;
+}
+
+.patientRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px;
+}
+
+.statusPill {
+  display: flex;
+  width: 120px;
+  height: 26px;
+  padding: 4px 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+
+  p {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}

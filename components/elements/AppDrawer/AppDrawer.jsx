@@ -48,19 +48,38 @@ const providerMenuItems = [
 ];
 
 // patient menu items
-const patientMenuItems = [];
+const patientMenuItems = [
+  {
+    name: "Dashboard",
+    url: Routes.PatientDashboard,
+    icon: "/images/dashboard.svg",
+    iconHover: "/images/dashboard-selected.svg",
+  },
+  {
+    name: "Medications",
+    url: Routes.PatientMedications,
+    icon: "/images/pill.svg",
+    iconHover: "/images/pill-selected.svg",
+  },
+  {
+    name: "Reminders",
+    url: Routes.PatientReminders,
+    icon: "/images/calendar-black.svg",
+    iconHover: "/images/calendar.svg",
+  },
+];
 
 // bottom menu items
 const bottomMenuItems = [
   {
     name: "Settings",
-    url: Routes.ProviderDashboard,
+    url: "",
     icon: "/images/settings.svg",
     iconHover: "/images/dashboard-selected.svg",
   },
   {
     name: "Help Center",
-    url: Routes.ProviderDashboard,
+    url: "",
     icon: "/images/helpCenter.svg",
     iconHover: "/images/icon-provider-dashboard-hover.svg",
   },
@@ -98,11 +117,7 @@ export default function AppDrawer({ mode }) {
           {menuItems.map((item, index) => {
             return (
               <ListItem
-                selected={
-                  mode == "provider"
-                    ? router.pathname === item?.url
-                    : router.pathname.includes(item?.url)
-                }
+                selected={router.pathname === item?.url}
                 key={index}
                 icon={<Image src={item.icon} alt="" width={24} height={24} />}
                 iconSelected={
