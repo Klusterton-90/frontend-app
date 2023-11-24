@@ -83,7 +83,7 @@ function SignupRight() {
           <div className={styles.passwordInput}>
             <input placeholder="Select" type="" />
             <Image
-              src={"/images/eye.svg"}
+              src={"/images/arrow-down.svg"}
               alt="dropdown"
               width={24}
               height={24}

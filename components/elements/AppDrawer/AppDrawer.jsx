@@ -16,34 +16,22 @@ const providerMenuItems = [
     iconHover: "/images/dashboard-selected.svg",
   },
   {
-    name: "Reminders",
-    url: Routes.ProviderReminders,
-    icon: "/images/calendar-black.svg",
-    iconHover: "/images/calendar.svg",
-  },
-  {
     name: "Patients",
     url: Routes.ProviderPatients,
     icon: "/images/patients.svg",
     iconHover: "/images/patients-selected.svg",
   },
   {
-    name: "Messages",
-    url: Routes.ProviderMessages,
-    icon: "/images/messages.svg",
-    iconHover: "/images/messages-selected.svg",
-  },
-  {
     name: "Reports",
     url: Routes.ProviderReports,
     icon: "/images/report.svg",
-    iconHover: "/images/icon-provider-dashboard-hover.svg",
+    iconHover: "/images/report-selected.svg",
   },
   {
     name: "Statistics",
     url: Routes.ProviderStatistics,
     icon: "/images/statistics.svg",
-    iconHover: "/images/icon-provider-dashboard-hover.svg",
+    iconHover: "/images/statistics-selected.svg",
   },
 ];
 
@@ -56,16 +44,22 @@ const patientMenuItems = [
     iconHover: "/images/dashboard-selected.svg",
   },
   {
+    name: "Reminders",
+    url: Routes.PatientReminders,
+    icon: "/images/calendar-black.svg",
+    iconHover: "/images/calendar.svg",
+  },
+  {
     name: "Medications",
     url: Routes.PatientMedications,
     icon: "/images/pill.svg",
     iconHover: "/images/pill-selected.svg",
   },
   {
-    name: "Reminders",
-    url: Routes.PatientReminders,
-    icon: "/images/calendar-black.svg",
-    iconHover: "/images/calendar.svg",
+    name: "Report",
+    url: Routes.PatientReport,
+    icon: "/images/report.svg",
+    iconHover: "/images/report-selected.svg",
   },
 ];
 

@@ -10,5 +10,6 @@ export const Routes = {
   PatientDashboard: "/patient/dashboard",
   PatientMedications: "/patient/dashboard/medications",
   PatientReminders: "/patient/dashboard/reminders",
+  PatientReport: "/patient/dashboard/report",
   LandingPage: "/landing",
 };

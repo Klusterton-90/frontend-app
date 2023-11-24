@@ -1,0 +1,21 @@
+.topRow {
+    margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 0.5px solid #d9d9d9;
+  background: #fff;
+  box-shadow: 0px 2px 4px 6px rgba(0, 0, 0, 0.01);
+  h3 {
+    color: #1e1e1e;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  span {
+    color: var(--Grey-3, #828282);
+    font-size: 16px;
+    font-weight: 500;
+  }
+}

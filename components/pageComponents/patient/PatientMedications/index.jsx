@@ -3,17 +3,13 @@ import styles from "./PatientMedications.module.scss";
 import Layout from "@/components/layouts/Layout/Layout";
 import Breadcrumbs from "@/components/layouts/Layout/Breadcrumbs/Breadcrumbs";
 import DashboardButton from "@/components/elements/DashboardButton/DashboardButton";
+import HeadingCard from "@/components/elements/HeadingCard/HeadingCard";
 
 export default function PatientMedications() {
   return (
     <Layout mode="patient">
       <Breadcrumbs />
-      <div className={styles.topRow}>
-        <h3>
-          Total Medications <span>(13)</span>
-        </h3>
-        <DashboardButton outline={false} buttonText={"Add Dose"} />
-      </div>
+      <HeadingCard heading={"Total Medications"} number={13} />
     </Layout>
   );
 }
