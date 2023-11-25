@@ -2,7 +2,7 @@
   padding: 95px 0;
 }
 .bodyTop {
-  padding: 0 95px;
+  padding: 0 120px;
 
   p {
     color: #787878;
@@ -22,11 +22,11 @@
 
 .aboutRow {
   display: flex;
-  margin: 80px 95px;
+  margin: 80px 120px;
 }
 
 .bodyBottom {
-  padding: 95px;
+  padding: 120px;
   background-color: #e8eef7;
   display: flex;
   gap: 47px;
@@ -39,4 +39,19 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+}
+
+.sectionThree {
+  padding: 120px;
+}
+
+.sectionInfo {
+  display: flex;
+  justify-content: space-between;
+  padding: 100px 0;
+}
+
+.sectionInfoText {
+  margin: auto;
+  width: 45%;
 }
