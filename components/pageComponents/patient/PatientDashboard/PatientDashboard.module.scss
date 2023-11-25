@@ -1,60 +1,112 @@
 .dashboardContainer {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+
+.dashboardLeft {
+  min-width: 60%;
+}
+
+.welcomeContainer {
+  display: flex;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #1b55ad 0%, #002359 100%);
+  padding: 20px;
+  width: 100%;
+  color: #fff;
+  position: relative;
+  margin: 20px 0;
+
+  h3 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 20px;
+    font-weight: 400;
+  }
+}
+
+.timeDateContainer {
+  display: flex;
+  border-radius: 10px;
+  background: #4977bd;
+  padding: 10px;
+  color: #ffffff;
+  gap: 36px;
+  margin-bottom: 50px;
+
+  div {
     display: flex;
-    width: 100%;
   }
-  
-  .dashboardLeft {
-    min-width: 60%;
+}
+
+.date {
+  display: flex;
+  gap: 11px;
+}
+
+.welcomeImage {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.dashboardCardRow {
+  display: flex;
+  gap: 20px;
+}
+
+.dashboardRight {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  border: 0.5px solid #d9d9d9;
+  background: #fff;
+  box-shadow: 0px 2px 4px 6px rgba(0, 0, 0, 0.01);
+}
+
+.upcomingMedicationsHeader {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+
+  h3 {
+    color: #1e1e1e;
+    font-size: 20px;
+    font-weight: 600;
   }
-  
-  .welcomeContainer {
-    display: flex;
-    border-radius: 20px;
-    background: linear-gradient(90deg, #1b55ad 0%, #002359 100%);
-    padding: 20px;
-    width: 700px;
-    color: #fff;
-    position: relative;
-    margin: 20px 0;
-  
-    h3 {
-      font-size: 24px;
-      font-weight: 600;
-    }
-  
-    p {
-      font-size: 20px;
-      font-weight: 400;
-    }
+
+  p {
+    text-decoration: underline;
+    color: #1b55ad;
+    font-size: 16px;
+    font-weight: 500;
   }
-  
-  .timeDateContainer {
-    display: flex;
-    border-radius: 10px;
-    background: #4977bd;
-    padding: 10px;
-    color: #ffffff;
-    gap: 36px;
-    margin-bottom: 50px;
-  
-    div {
-      display: flex;
-    }
+}
+
+.upcomingMedicationCard {
+  border-radius: 10px;
+  background: #ecf4fb;
+  padding: 20px;
+  margin: 10px 0;
+  border-left: 6px solid #446eef;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+
+  p {
+    color: #6c6c70;
+    font-size: 16px;
+    font-weight: 500;
   }
-  
-  .date {
-    display: flex;
-    gap: 11px;
+
+  h3 {
+    color: #1e1e1e;
+    font-size: 20px;
+    font-weight: 600;
   }
-  
-  .welcomeImage {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-  }
-  
-  .dashboardCardRow {
-    display: flex;
-    gap: 20px;
-  }
-  
+}

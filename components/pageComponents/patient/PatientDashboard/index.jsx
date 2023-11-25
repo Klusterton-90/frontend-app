@@ -6,6 +6,10 @@ import Image from "next/image";
 import DashboardCard from "@/components/elements/DashboardCard/DashboardCard";
 import { currentDate, currentTime } from "@/constants/date";
 import PatientsCard from "@/components/elements/PatientsCard/PatientsCard";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+import Link from "next/link";
+import { Routes } from "@/constants/navigation";
 
 export default function PatientDashboard() {
   return (
@@ -59,9 +63,37 @@ export default function PatientDashboard() {
             />
           </div>
 
-          <PatientsCard dashboard={true} provider={false}/>
+          <PatientsCard dashboard={true} provider={false} />
         </div>
-        <div className={styles.dashboardRight}></div>
+        <div className={styles.dashboardRight}>
+          {/* dashboard calendar */}
+          <Calendar calendarType="gregory" />
+
+          {/* upcoming medication section */}
+          <div className={styles.upcomingMedicationsHeader}>
+            <h3>Upcoming</h3>
+            <Link href={Routes.PatientMedications}>
+              <p>View all</p>
+            </Link>
+          </div>
+
+          {/* upcoming medication */}
+          <div className={styles.upcomingMedicationCard}>
+            <p>Medication</p>
+            <h3>Medication Name</h3>
+            <p>Nov 21, 10:00 AM</p>
+          </div>
+          <div className={styles.upcomingMedicationCard}>
+            <p>Medication</p>
+            <h3>Medication Name</h3>
+            <p>Nov 21, 10:00 AM</p>
+          </div>
+          <div className={styles.upcomingMedicationCard}>
+            <p>Medication</p>
+            <h3>Medication Name</h3>
+            <p>Nov 21, 10:00 AM</p>
+          </div>
+        </div>
       </div>
     </Layout>
   );
