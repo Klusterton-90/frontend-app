@@ -1,8 +1,8 @@
-import { React, useState, useRef } from "react";
+import { React, useState, useRef, useEffect } from "react";
 import styles from "./Search.module.scss";
 import Image from "next/image";
 
-export default function Search({ list, label, subtext, placeholder }) {
+export default function Search({ list, label, subtext, placeholder, getValue }) {
   // search value state
   const [searchValue, setSearchValue] = useState("");
   const [selectedValue, setSelectedValue] = useState("");
@@ -31,6 +31,10 @@ export default function Search({ list, label, subtext, placeholder }) {
   };
 
   const ref = useRef(null);
+
+  useEffect(()=>{
+    getValue(searchValue);
+  })
 
   return (
     <div className={styles.dropDownInputContainer}>

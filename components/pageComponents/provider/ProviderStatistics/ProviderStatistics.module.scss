@@ -1,4 +1,86 @@
 .cardRow {
   display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.chartRow {
+  display: flex;
   gap: 20px;
+}
+
+.roundedContainer {
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 20px;
+  border: 0.5px solid #d9d9d9;
+  background: #fff;
+  box-shadow: 0px 2px 4px 6px rgba(0, 0, 0, 0.01);
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+
+  h3 {
+    color: #1e1e1e;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+.dateRow {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+
+  p {
+    color: #6c6c70;
+    font-size: 10px;
+    font-weight: 500;
+  }
+
+  select {
+    border-radius: 4px;
+    border: 1px solid var(--grayscale-label, #6e7191);
+    padding: 2px 14px;
+    outline: none;
+    color: #434343;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  option {
+    border-radius: 4px;
+    border: 1px solid var(--grayscale-label, #6e7191);
+    padding: 2px 14px;
+  }
+}
+
+.analysisReportRow {
+  display: flex;
+  gap: 20px;
+}
+.reportRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+
+  h3 {
+    color: var(--black-2, #1d1d1d);
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 120px;
+  }
+  h4 {
+    color: var(--black-2, #1d1d1d);
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  p {
+    color: #6c6c70;
+    font-size: 14px;
+    font-weight: 400;
+  }
 }

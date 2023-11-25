@@ -28,6 +28,7 @@
   }
 
   input {
+    width: 100%;
     color: #6c6c70;
     font-size: 20px;
     font-weight: 400;
@@ -69,6 +70,10 @@
     font-size: 20px;
     font-weight: 400;
   }
+}
+
+.eyeIcon{
+  cursor: pointer;
 }
 
 .submitButton {

@@ -1,8 +1,8 @@
-import { React, useState, useRef } from "react";
+import { React, useState, useRef, useEffect } from "react";
 import styles from "./Select.module.scss";
 import Image from "next/image";
 
-export default function Select({list, label, subtext, placeholder}) {
+export default function Select({list, label, subtext, placeholder, getValue}) {
   // selected  type state
   const [selectedType, setSelectedType] = useState(placeholder);
   // show dropdown
@@ -15,6 +15,10 @@ export default function Select({list, label, subtext, placeholder}) {
   };
 
   const ref = useRef(null);
+
+  useEffect(()=>{
+    getValue(selectedType);
+  })
 
   return (
     <div className={styles.dropDownInputContainer}>

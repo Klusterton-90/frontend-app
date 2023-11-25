@@ -15,10 +15,14 @@ function LogInRight() {
   const [emailOrNumber, setEmailOrNumber] = useState("");
   const [password, setPassword] = useState("");
 
+  // password visibility
+  const [visible, setVisible] = useState(false);
+
   // handle form submit
   const handleFormSubmit = (e) => {
     e.preventDefault();
     router.push(Routes.ProviderDashboard);
+    console.log([emailOrNumber, password]);
   };
 
   return (
@@ -33,19 +37,36 @@ function LogInRight() {
 
         <div className={styles.inputContainer}>
           <label>Email or Phone Number</label>
-          <input placeholder="Enter your email or phone number" type="text" />
+          <input
+            placeholder="Enter your email or phone number"
+            type="text"
+            required
+            value={emailOrNumber}
+            onChange={(event) => setEmailOrNumber(event.target.value)}
+          />
         </div>
         {/* password */}
         <div className={styles.passwordContainer}>
           <label>Password</label>
           <div className={styles.passwordInput}>
-            <input placeholder="Enter password" type="password" />
-            <Image
-              src={"/images/eye.svg"}
-              alt="visibility"
-              width={24}
-              height={24}
+            <input
+              placeholder="Enter password"
+              type={visible ? "text" : "password"}
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              required
             />
+            <div
+              onClick={() => setVisible(!visible)}
+              className={styles.eyeIcon}
+            >
+              <Image
+                src={"/images/eye.svg"}
+                alt="visibility"
+                width={24}
+                height={24}
+              />
+            </div>
           </div>
         </div>
         <Link href={""} className={styles.forgotPassword}>

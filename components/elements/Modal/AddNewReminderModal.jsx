@@ -4,7 +4,6 @@ import Image from "next/image";
 import Select from "../Select/Select";
 import Search from "../Search/Search";
 import DashboardButton from "../DashboardButton/DashboardButton";
-import NotificationModal from "./NotificationModal";
 
 const medType = ["Syrup", "Drops", "Pill", "Powder", "Injection"];
 
@@ -18,19 +17,8 @@ export default function AddNewReminderModal({
   // description state
   const [description, setDescription] = useState("");
 
-  // show or hide modal
-  // const [showNotification, setShowNotification] = useState(false);
-
-  // show modal
-  // const showModal = () => {
-  //   handleClose();
-  //   setShowNotification(true);
-  // };
-
-  // // hide modal
-  // const hideModal = () => {
-  //   setShowNotification(false);
-  // };
+  // values
+  
 
   return (
     <div

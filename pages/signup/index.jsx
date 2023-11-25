@@ -6,6 +6,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Routes } from "@/constants/navigation";
 import { useRouter } from "next/router";
+import Select from "@/components/elements/Select/Select";
+
+const userType = ["Patient", "Healthcare Provider"];
 
 function SignupRight() {
   // router
@@ -16,11 +19,22 @@ function SignupRight() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  // password visibility
+  const [visible, setVisible] = useState(false);
+  // dropdown
 
   // handle submit
   const handleFormSubmit = (e) => {
     e.preventDefault();
     router.push(Routes.Verify);
+    console.log([fullName, email, password, phoneNumber, selectedValue]);
+  };
+
+  // get select value
+  const [selectedValue, setSelectedValue] = useState("Patient");
+
+  const getValue = (selectedValue) => {
+    setSelectedValue(selectedValue);
   };
 
   return (
@@ -39,6 +53,7 @@ function SignupRight() {
             type="text"
             value={fullName}
             onChange={(event) => setFullName(event.target.value)}
+            required
           />
         </div>
         <div className={styles.inputContainer}>
@@ -48,6 +63,7 @@ function SignupRight() {
             type="email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
+            required
           />
         </div>
         <div className={styles.inputContainer}>
@@ -57,6 +73,7 @@ function SignupRight() {
             type="text"
             value={phoneNumber}
             onChange={(event) => setPhoneNumber(event.target.value)}
+            required
           />
         </div>
         {/* password */}
@@ -65,31 +82,32 @@ function SignupRight() {
           <div className={styles.passwordInput}>
             <input
               placeholder="Enter password"
-              type="password"
+              type={visible ? "text" : "password"}
               value={password}
               onChange={(event) => setPassword(event.target.value)}
+              required
             />
-            <Image
-              src={"/images/eye.svg"}
-              alt="visibility"
-              width={24}
-              height={24}
-            />
+            <div
+              onClick={() => setVisible(!visible)}
+              className={styles.eyeIcon}
+            >
+              <Image
+                src={"/images/eye.svg"}
+                alt="visibility"
+                width={24}
+                height={24}
+              />
+            </div>
           </div>
         </div>
-        {/* user type */}
-        <div className={styles.passwordContainer}>
-          <label>I&apos;m signing up as</label>
-          <div className={styles.passwordInput}>
-            <input placeholder="Select" type="" />
-            <Image
-              src={"/images/arrow-down.svg"}
-              alt="dropdown"
-              width={24}
-              height={24}
-            />
-          </div>
-        </div>
+
+        {/* select user type */}
+        <Select
+          list={userType}
+          label={"I'm signing up as"}
+          placeholder={"Patient"}
+          getValue={getValue}
+        />
         {/* submit button */}
         <button className={styles.submitButton} type="submit">
           <p>Create an Account</p>

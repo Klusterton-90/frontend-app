@@ -15,7 +15,7 @@ export default function ProviderDashboard() {
       <Breadcrumbs />
       <div className={styles.dashboardContainer}>
         <div className={styles.dashboardTop}>
-          <div>
+          <div  className={styles.dashboardTopLeft}>
             <div className={styles.welcomeContainer}>
               <div>
                 <div className={styles.timeDateContainer}>

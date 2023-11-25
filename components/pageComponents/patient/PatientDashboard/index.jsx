@@ -67,7 +67,7 @@ export default function PatientDashboard() {
         </div>
         <div className={styles.dashboardRight}>
           {/* dashboard calendar */}
-          <Calendar calendarType="gregory" />
+          <Calendar calendarType="gregory" className={styles.calendar} />
 
           {/* upcoming medication section */}
           <div className={styles.upcomingMedicationsHeader}>

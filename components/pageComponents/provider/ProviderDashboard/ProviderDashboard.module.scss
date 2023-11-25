@@ -6,12 +6,16 @@
   display: flex;
 }
 
+.dashboardTopLeft {
+  width: 70%;
+}
+
 .welcomeContainer {
   display: flex;
   border-radius: 20px;
   background: linear-gradient(90deg, #1b55ad 0%, #002359 100%);
   padding: 20px;
-  width: 700px;
+  width: 100%;
   color: #fff;
   position: relative;
   margin: 20px 0;
@@ -55,6 +59,7 @@
 .dashboardCardRow {
   display: flex;
   gap: 20px;
+  width: 100%;
 }
 
 .calendar {
@@ -64,4 +69,5 @@
   box-shadow: 0px 2px 4px 6px rgba(0, 0, 0, 0.01);
   padding: 20px;
   margin: 20px 0 0 20px;
+  width: 100%;
 }

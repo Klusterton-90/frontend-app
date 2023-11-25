@@ -4,8 +4,29 @@
   margin: 20px 0;
 }
 
-
-.addReminderButton{
- display: flex;
+.addReminderButton {
+  display: flex;
   justify-content: flex-end;
+}
+
+.eventComponent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px;
+  border: 0.5px solid #1b55ad;
+  background: #e5eff8;
+  padding: 5px 30px;
+  font-size: 16px;
+
+  h3 {
+    font-weight: 600;
+  }
+
+  p {
+    color: #434343;
+    font-weight: 400;
+  }
 }
