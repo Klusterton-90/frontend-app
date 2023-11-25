@@ -76,7 +76,13 @@ export default function PatientsCard({ dashboard, provider, report }) {
       </div>
       <hr />
 
-      <div className={styles.patientInfo}>
+      <div
+        className={styles.patientInfo}
+        style={{
+          
+          maxHeight: dashboard ? "400px" : "800px",
+        }}
+      >
         {(dashboard
           ? provider
             ? patientInfoDashboard
@@ -91,7 +97,7 @@ export default function PatientsCard({ dashboard, provider, report }) {
         ).map((info, index) => {
           return (
             <div key={index} className={styles.patientRow}>
-              {<span>{index + 1}</span>}
+              {dashboard ? "" : <span>{index + 1}</span>}
               {info.one && <p>{info.one}</p>}
               {info.two && <p>{info.two}</p>}
               {info.three && <p>{info.three}</p>}

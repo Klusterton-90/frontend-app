@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./DashboardButton.module.scss";
 
-export default function DashboardButton({ outline, buttonText }) {
+export default function DashboardButton({ outline, buttonText, onClick }) {
   return (
     <button
+    onClick={onClick}
       className={styles.button}
       style={{
         backgroundColor: outline ? "transparent" : "#1B55AD",

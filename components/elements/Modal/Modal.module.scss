@@ -1,0 +1,105 @@
+.modal {
+  position: fixed;
+  z-index: 99;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modalContainer {
+  position: fixed;
+  min-height: 70%;
+  min-width: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  border: 0.5px solid #d9d9d9;
+  background: #fff;
+  box-shadow: 0px 2px 4px 6px rgba(0, 0, 0, 0.01);
+  padding: 40px;
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reminderInfoContainer {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+.closeIcon {
+  cursor: pointer;
+}
+
+.inputContainer {
+  margin: 20px 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  label {
+    color: #1e1e1e;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  input {
+    min-width: 100%;
+    padding: 23px;
+    color: #6c6c70;
+    outline: none;
+    font-size: 20px;
+    font-weight: 400;
+    background-color: #f9f9f9;
+    border: 0.5px solid #6c6c70;
+    border-radius: 10px;
+  }
+
+  span {
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
+.infoContainerRight {
+  width: 50%;
+}
+.infoContainerLeft {
+  width: 50%;
+}
+
+.buttonRow {
+  display: flex;
+  float: right;
+  gap: 20px;
+  margin: 10px 0;
+}
+
+.notificationContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 40px;
+
+  h3 {
+    color: #1e1e1e;
+    font-size: 32px;
+    font-weight: 600;
+  }
+
+  h4 {
+    color: #808080;
+    font-size: 20px;
+    font-weight: 400;
+  }
+}
