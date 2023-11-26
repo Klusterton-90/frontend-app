@@ -18,7 +18,50 @@ export default function AddNewReminderModal({
   const [description, setDescription] = useState("");
 
   // values
-  
+  const [doseDuration, setDoseDuration] = useState("");
+  const [medicineType, setMedicineType] = useState("");
+  const [medicine, setMedicine] = useState("");
+  const [numberOfDoses, setNumberOfDoses] = useState("");
+  const [firstDose, setFirstDose] = useState("");
+  const [secondDose, setSecondDose] = useState("");
+  const [diagnosis, setDiagnosis] = useState("");
+
+  // get values
+  const getDuration = (duration) => {
+    setDoseDuration(duration);
+  };
+
+  const getMedType = (type) => {
+    setMedicineType(type);
+  };
+  const getMedicine = (medicine) => {
+    setMedicine(medicine);
+  };
+  const getNumberOfDoses = (numberOfDoses) => {
+    setNumberOfDoses(numberOfDoses);
+  };
+  const getFirstDose = (firstDose) => {
+    setFirstDose(firstDose);
+  };
+  const getSecondDose = (secondDose) => {
+    setSecondDose(secondDose);
+  };
+  const getDiagnosis = (diagnosis) => {
+    setDiagnosis(diagnosis);
+  };
+
+  const showValues = () => {
+    console.log([
+      description,
+      doseDuration,
+      medicine,
+      medicineType,
+      numberOfDoses,
+      firstDose,
+      secondDose,
+      diagnosis,
+    ]);
+  };
 
   return (
     <div
@@ -40,6 +83,7 @@ export default function AddNewReminderModal({
             label={"Type"}
             placeholder={"Select Type"}
             subtext={"What form is the med?"}
+            getValue={getMedType}
           />
 
           {/* search for medicine */}
@@ -48,6 +92,7 @@ export default function AddNewReminderModal({
             label={"Medicine"}
             subtext={"What med would you like to add?"}
             placeholder={"Search or type "}
+            getValue={getMedicine}
           />
 
           {/* select duration */}
@@ -56,6 +101,7 @@ export default function AddNewReminderModal({
             subtext={"How long will you take this med?"}
             list={duration}
             placeholder={"Select duration"}
+            getValue={getDuration}
           />
           {/* select first dose */}
           <Select
@@ -63,6 +109,7 @@ export default function AddNewReminderModal({
             subtext={"When do you need to take the first dose?"}
             list={duration}
             placeholder={"Select time"}
+            getValue={getFirstDose}
           />
         </div>
         <div className={styles.infoContainerRight}>
@@ -85,6 +132,7 @@ export default function AddNewReminderModal({
             label={"Diagnosis"}
             subtext={"What are you taking the med for?"}
             placeholder={"Search or type "}
+            getValue={getDiagnosis}
           />
 
           {/* doses select */}
@@ -93,6 +141,7 @@ export default function AddNewReminderModal({
             subtext={"How many times will you take it?"}
             list={duration}
             placeholder={"Select doses"}
+            getValue={getNumberOfDoses}
           />
           {/* second dose select */}
           <Select
@@ -100,6 +149,7 @@ export default function AddNewReminderModal({
             subtext={"Optional"}
             list={duration}
             placeholder={"Select time"}
+            getValue={getSecondDose}
           />
 
           <div className={styles.buttonRow}>
@@ -111,7 +161,10 @@ export default function AddNewReminderModal({
             <DashboardButton
               buttonText={"Save"}
               outline={false}
-              onClick={showNotification}
+              onClick={() => {
+                showNotification();
+                showValues();
+              }}
             />
           </div>
         </div>
